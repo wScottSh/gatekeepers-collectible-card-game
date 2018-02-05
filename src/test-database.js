@@ -3,7 +3,7 @@ import fire from './fire'
 
 class Game extends Component {
   constructor(props) {
-    super(props);
+    super(props); 
     this.state = { messages: [] }; // <- set up react state
   }
   componentWillMount(){
