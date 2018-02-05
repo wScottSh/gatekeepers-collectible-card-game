@@ -4,6 +4,9 @@ import Form from '../Form/Form'
 import CardCreator from '../CardCreator/CardCreator'
 
 class Game extends Component {
+
+  gameSettings 
+
   render() {
     return (
       <div>
