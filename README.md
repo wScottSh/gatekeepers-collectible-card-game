@@ -12,6 +12,11 @@ Specifically, the purpose of this project is to demonstrate the flexibility and 
 
 ![HD Samus Card Mockup](./info/pics/CardTemplate2.jpg)
 ![Pencil Sketch Card Mockup](./info/pics/ScanSnap542.jpg)
+<details>
+<summary>Additional Mockups and Playtest Notes</summary>
+![Whiteboard Play Session](./info/pics/whiteboard.jpg)
+![Scribbled Notes](./info/pics/ScanSnap492.jpg)
+</details>
 
 ## User Stories
 
