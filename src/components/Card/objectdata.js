@@ -1,5 +1,6 @@
 card {
   title: "String",
+  game: "String",
   type: "String",
   image: "PicURL?",
   flavorText: "String",

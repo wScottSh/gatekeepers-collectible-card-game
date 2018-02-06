@@ -1,4 +1,5 @@
 .cardsContainer {
   background-color: yellow;
-  flex: 3 3 auto;
+  flex: 3 1 auto;
+  overflow: auto;
 }
