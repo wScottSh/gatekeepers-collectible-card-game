@@ -1,0 +1,4 @@
+.cardsContainer {
+  background-color: yellow;
+  flex: 3 3 auto;
+}

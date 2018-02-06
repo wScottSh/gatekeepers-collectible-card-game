@@ -1,18 +1,21 @@
 import React, { Component } from 'react'
+import './Game.css'
 import Header from '../Header/Header'
 import Form from '../Form/Form'
-import CardCreator from '../CardCreator/CardCreator'
+import CardsContainer from '../CardsContainer/CardsContainer'
 
 class Game extends Component {
 
-  gameSettings 
+  gameSettings
 
   render() {
     return (
-      <div>
-        <Header title="Gatekeepers Card Creator" />
-        <Form />
-        <CardCreator />
+      <div className="gameContainer">
+        <Header title="Gatekeepers Card Creator" user="Username"/>
+        <div className="contentContainer">
+          <CardsContainer />
+          <Form />
+        </div>
       </div>
     );
   }

@@ -1,0 +1,9 @@
+.contentContainer {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 80px;
+  bottom: 0vh;
+  flex-direction: row;
+  justify-content: space-between;
+}

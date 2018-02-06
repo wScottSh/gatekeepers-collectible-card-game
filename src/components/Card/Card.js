@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 
-class CardDisplayer extends Component {
+class Card extends Component {
   render() {
     return (
-      <div></div>
+      <div>
+        <h1>Card</h1>
+      </div>
     )
   }
 }
 
-export default CardDisplayer;
+export default Card;

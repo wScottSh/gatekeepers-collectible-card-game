@@ -1,11 +1,18 @@
 import React, {Component} from 'react'
+import './CardsContainer.css'
+import CardCreator from '../CardCreator/CardCreator'
+import GlobalDeck from '../GlobalDeck/GlobalDeck'
 
-class CardCreator extends Component {
+class CardsContainer extends Component {
   render() {
     return (
-      <div></div>
+      <div className="cardsContainer">
+        <h1>Cards Container</h1>
+        <CardCreator />
+        <GlobalDeck />
+      </div>
     )
   }
 }
 
-export default CardCreator;
+export default CardsContainer;

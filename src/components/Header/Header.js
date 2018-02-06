@@ -4,9 +4,9 @@ import './Header.css'
 class Header extends Component {
   render() {
     return (
-      <div className="headerBlock">
+      <header className="headerBlock">
         <h1 className="headerTitle">{this.props.title}</h1>
-      </div>
+    </header>
     )
   }
 }
