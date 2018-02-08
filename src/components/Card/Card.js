@@ -6,12 +6,12 @@ class Card extends Component {
     return (
       <div className="cardContainer">
         <div className="cardTemplate">
-          <p className="cardTitle">Samus Aran</p>
-          <p className="cardGame">Super Metroid</p>
-          <p className="cardType">Metroidvania</p>
-          <img className="cardImage" src="https://img00.deviantart.net/0eb9/i/2008/101/c/4/samus_aran_final_by_cliford417.jpg" />
-          <p className="cardAttkName">Screw Attack</p>
-          <p className="cardFlavorText">The Screw Attack is an advanced movement system that allows Samus to emit energy waves from points on her armor while she somersaults into the air, turning her into a rotating energy blade of destruction.</p>
+          <p className="cardTitle">{this.props.title}</p>
+          <p className="cardGame">{this.props.game}</p>
+          <p className="cardType">{this.props.type}</p>
+          <img className="cardImage" src={this.props.image} alt={this.props.title} />
+          <p className="cardAttkName">{this.props.attkName}</p>
+          <p className="cardFlavorText">{this.props.flavorText}</p>
         </div>
       </div>
     )
