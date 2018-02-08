@@ -3,12 +3,40 @@ import Card from '../Card/Card'
 import fire from '../../fire'
 
 class CardCreator extends Component {
+  constructor() {
+    super()
+    this.state = {
+      cards: []
+    }
+  }
+
+  componentDidMount() {
+    const cardsRef = fire.database().ref('cards');
+    cardsRef.on('value', (snapshot) => {
+      console.log(snapshot.val());
+      let cards = snapshot.val();
+      let newState = [];
+      for (let card in cards) {
+        newState.push({
+          id: card,
+          title: cards[card].title,
+          game: cards[card].game,
+          type: cards[card].type,
+          image: cards[card].image,
+          attkName: cards[card].attkName,
+          flavorText: cards[card].flavorText
+        });
+      }
+      this.setState({
+        cards: newState
+      });
+    });
+  }
+
   render() {
     return (
       <div>
-        <h1>Card Creator</h1>
-      {console.log(fire.database().ref('cards').orderByKey().limitToLast(100))}
-        <Card title="Samus Aran"
+        <Card title={this.state.title}
               game="Super Metroid"
               type="Metroidvania"
               image="https://img00.deviantart.net/0eb9/i/2008/101/c/4/samus_aran_final_by_cliford417.jpg"

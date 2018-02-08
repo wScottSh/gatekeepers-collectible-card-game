@@ -25,8 +25,8 @@ class Form extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const itemsRef = fire.database().ref('cards');
-    const item = {
+    const cardsRef = fire.database().ref('cards');
+    const card = {
       title: this.state.title,
       game: this.state.game,
       type: this.state.type,
@@ -34,7 +34,7 @@ class Form extends Component {
       attkName: this.state.attkName,
       flavorText: this.state.flavorText
     }
-    itemsRef.push(item);
+    cardsRef.push(card);
     this.setState({
       title: '',
       game: '',
@@ -49,13 +49,13 @@ class Form extends Component {
     return (
       <section className="inputContainer">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="title" placeholder="What is the card's title?" onChange={this.handleChange} value={this.state.title} />
-          <input type="text" name="game" placeholder="What is the card's title?" onChange={this.handleChange} value={this.state.game} />
-          <input type="text" name="type" placeholder="What is the card's title?" onChange={this.handleChange} value={this.state.type} />
-          <input type="text" name="image" placeholder="What is the card's title?" onChange={this.handleChange} value={this.state.image} />
-          <input type="text" name="attkName" placeholder="What is the card's title?" onChange={this.handleChange} value={this.state.attkName} />
-          <input type="text" name="flavorText" placeholder="What is the card's title?" onChange={this.handleChange} value={this.state.flavorText} />
-          <button>Create Card</button>
+          <input type="text" name="title" placeholder="Character Name" onChange={this.handleChange} value={this.state.title} />
+          <input type="text" name="game" placeholder="Game Name" onChange={this.handleChange} value={this.state.game} />
+          <input type="text" name="type" placeholder="Game Genre" onChange={this.handleChange} value={this.state.type} />
+          <input type="text" name="image" placeholder="Image URL" onChange={this.handleChange} value={this.state.image} />
+          <input type="text" name="attkName" placeholder="Attack Name" onChange={this.handleChange} value={this.state.attkName} />
+          <input type="text" name="flavorText" placeholder="Short Card Description" onChange={this.handleChange} value={this.state.flavorText} />
+          <button>Finalize Card</button>
         </form>
       </section>
     )
