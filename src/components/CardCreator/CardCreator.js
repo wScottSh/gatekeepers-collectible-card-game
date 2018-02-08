@@ -35,14 +35,24 @@ class CardCreator extends Component {
 
   render() {
     return (
-      <div>
-        <Card title={this.state.title}
-              game="Super Metroid"
-              type="Metroidvania"
-              image="https://img00.deviantart.net/0eb9/i/2008/101/c/4/samus_aran_final_by_cliford417.jpg"
-              attkName="Screw Attack"
-              flavorText="The Screw Attack is an advanced movement system that allows Samus to emit energy waves from points on her armor while she somersaults into the air, turning her into a rotating energy blade of destruction."/>
-      </div>
+      <section className='display-card'>
+        <div className="wrapper">
+          <ul>
+            {this.state.cards.map((card) => {
+              return (
+                <li key={card.id}>
+                  <Card title={card.title}
+                        game={card.game}
+                        type={card.type}
+                        image={card.image}
+                        attkName={card.attkName}
+                        flavorText={card.flavorText} />
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </section>
     )
   }
 }
