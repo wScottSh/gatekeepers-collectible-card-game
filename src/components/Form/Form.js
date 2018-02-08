@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './Form.css'
+import fire from '../../fire'
 
 class Form extends Component {
   constructor() {
@@ -9,11 +10,26 @@ class Form extends Component {
       username: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const itemsRef = fire.database().ref('items');
+    const item = {
+      title: this.state.currentItem,
+      user: this.state.username
+    }
+    itemsRef.push(item);
+    this.setState({
+      currentItem: '',
+      username: ''
     });
   }
 
