@@ -1,18 +1,63 @@
 import React, {Component} from 'react'
 import Card from '../Card/Card'
+import fire from '../../fire'
 
 class GlobalDeck extends Component {
+  constructor() {
+    super()
+    this.state = {
+      cards: []
+    }
+  }
+
+  componentDidMount() {
+    const cardsRef = fire.database().ref('cards');
+    cardsRef.on('value', (snapshot) => {
+      console.log(snapshot.val());
+      let cards = snapshot.val();
+      let newState = [];
+      for (let card in cards) {
+        newState.push({
+          id: card,
+          title: cards[card].title,
+          game: cards[card].game,
+          type: cards[card].type,
+          image: cards[card].image,
+          attkName: cards[card].attkName,
+          flavorText: cards[card].flavorText
+        });
+      }
+      this.setState({
+        cards: newState
+      });
+    });
+  }
+
+  removeItem(cardId) {
+    const cardRef = fire.database().ref(`/cards/${cardId}`);
+    cardRef.remove();
+  }
+
   render() {
     return (
-      <div>
-        <h1>Global Deck</h1>
-        <Card title="Doom Guy"
-              game="DOOM"
-              type="First Person Shooter"
-              image="https://doomwiki.org/w/images/5/5c/MAP02_fist.png"
-              attkName="Punch"
-              flavorText="Punching is only about as effective as a pistol shot, but at least it never runs out of ammo."/>
-      </div>
+      <section className='display-card'>
+        <div className="wrapper">
+          <ul>
+            {this.state.cards.map((card) => {
+              return (
+                <div>
+                  <li key={card.id}>
+                    <Card title={card.title} game={card.game} type={card.type} image={card.image} attkName={card.attkName} flavorText={card.flavorText} />
+                  </li>
+                  <li>
+                    <button onClick={() => this.removeItem(card.id)}>Remove Item</button>
+                  </li>
+                </div>
+              )
+            })}
+          </ul>
+        </div>
+      </section>
     )
   }
 }
