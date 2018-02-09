@@ -45,11 +45,11 @@ li {
   font: inherit;
   line-height: 1;
   margin: 0.5em;
-  padding: 1em 2em;
-  right: -0.5em;
-  bottom: -.1em;
+  padding: .5em 2em;
+  right: 10px;
+  bottom: 6px;
   border-radius: 0 0 10px 10px;
-  z-index: -1;
+  z-index: 0;
   transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
 }
 
