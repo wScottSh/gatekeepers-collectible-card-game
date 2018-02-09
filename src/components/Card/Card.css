@@ -12,7 +12,7 @@ p {
 
 .cardTemplate {
   position: relative;
-  background-color: black;
+  background: linear-gradient(bottom left, #20002c, #28242A);
   border-style: solid;
   border-color: white;
   border-width: 5px;
