@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Card from '../Card/Card'
-import fire from '../../fire'
+// import Card from '../Card/Card'
+// import fire from '../../fire'
 
 class CardCreator extends Component {
 
