@@ -71,7 +71,7 @@ class GlobalDeck extends Component {
             )
           })}
           <div onClick={this.handleOpenModal} >
-            <AddCard />
+            <AddCard closeModal={this.handleCloseModal}/>
           </div>
           <ReactModal
             isOpen={this.state.showModal}
