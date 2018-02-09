@@ -15,7 +15,13 @@ li {
   left: 10%;
   right: 10%;
   bottom: 10%;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(200, 200, 200, 1);
+  border-radius: 20px;
+  border: solid white 3px;
+}
+
+:focus{
+    outline: none;
 }
 
 .Overlay {
@@ -25,4 +31,30 @@ li {
   right: 0%;
   bottom: 0%;
   background-color: rgba(0, 0, 0, 0.5)
+}
+
+.cardHolder {
+  position: relative;
+}
+
+.deleteButton {
+  position: absolute;
+  background: none;
+  border: rgba(0, 0, 0, .3) 2px solid;
+  color: rgba(0, 0, 0, .3);
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  right: -0.5em;
+  bottom: -.1em;
+  border-radius: 0 0 10px 10px;
+  z-index: -1;
+  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: red;
+  border: rgba(255, 255, 255, 1) 2px solid;
+  color: rgba(255, 255, 255, 1);
 }

@@ -65,7 +65,7 @@ class GlobalDeck extends Component {
                   <Card title={card.title} game={card.game} type={card.type} image={card.image} attkName={card.attkName} flavorText={card.flavorText} />
                 </li>
                 <li>
-                  <button onClick={() => this.removeItem(card.id)}>Remove Item</button>
+                  <button className="deleteButton" onClick={() => this.removeItem(card.id)}>Destroy Card</button>
                 </li>
               </section>
             )
@@ -80,7 +80,7 @@ class GlobalDeck extends Component {
             className="Modal"
             overlayClassName="Overlay">
             <Form />
-          <button onClick={this.handleCloseModal}>Cancel</button>
+          {/* <button onClick={this.handleCloseModal}>Cancel</button> */}
           </ReactModal>
         </ul>
       </section>

@@ -10,9 +10,9 @@ class Form extends Component {
       title: 'Character Name',
       game: 'Game Name',
       type: 'Game Genre',
-      image: 'http://static.pokemonpets.com/images/monsters-images-800-800/4211-Unown-K.png',
+      image: 'http://sorensenmotorsports.com/wp-content/uploads/2015/08/circle.png',
       attkName: 'Character\'s Attack',
-      flavorText: 'Short description of the attack.'
+      flavorText: 'Short description of the attack.',
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -37,12 +37,12 @@ class Form extends Component {
     }
     cardsRef.push(card);
     this.setState({
-      title: '',
-      game: '',
-      type: '',
-      image: '',
-      attkName: '',
-      flavorText: ''
+      title: 'Character Name',
+      game: 'Game Name',
+      type: 'Game Genre',
+      image: 'http://sorensenmotorsports.com/wp-content/uploads/2015/08/circle.png',
+      attkName: 'Character\'s Attack',
+      flavorText: 'Short description of the attack.'
     });
   }
 
@@ -55,17 +55,35 @@ class Form extends Component {
           image={this.state.image}
           attkName={this.state.attkName}
           flavorText={this.state.flavorText} />
+
         <section className="inputContainer">
-          <form onSubmit={this.handleSubmit}>
+          <form className="formWrapper" onSubmit={this.handleSubmit}>
+            <h2>Create a new card</h2>
+            <h3>Character Name</h3>
             <input type="text" name="title" placeholder="Character Name" onChange={this.handleChange} value={this.state.title} />
+            <h3>Game Name</h3>
             <input type="text" name="game" placeholder="Game Name" onChange={this.handleChange} value={this.state.game} />
+            <h3>Game Genre</h3>
             <input type="text" name="type" placeholder="Game Genre" onChange={this.handleChange} value={this.state.type} />
+            <h3>Image URL</h3>
             <input type="text" name="image" placeholder="Image URL" onChange={this.handleChange} value={this.state.image} />
+            <h3>Attack Name</h3>
             <input type="text" name="attkName" placeholder="Attack Name" onChange={this.handleChange} value={this.state.attkName} />
+            <h3>Short Card Description</h3>
             <input type="text" name="flavorText" placeholder="Short Card Description" onChange={this.handleChange} value={this.state.flavorText} />
-          <button onClick={() => this.closeModal} >Submit Card</button>
+
+          {   (this.state.title != 'Character Name'
+             && this.state.game != 'Game Name'
+             && this.state.type != 'Game Genre'
+             && this.state.image != 'http://sorensenmotorsports.com/wp-content/uploads/2015/08/circle.png'
+             && this.state.attkName != 'Character\'s Attack'
+             && this.state.flavorText != 'Short description of the attack.') &&
+
+            <button>Submit Card</button>
+          }
           </form>
         </section>
+
       </section>
     )
   }
