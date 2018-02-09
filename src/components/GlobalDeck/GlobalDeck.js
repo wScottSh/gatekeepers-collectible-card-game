@@ -70,18 +70,18 @@ class GlobalDeck extends Component {
               </section>
             )
           })}
-          <button onClick={this.handleOpenModal}>Open</button>
+          <div onClick={this.handleOpenModal} >
+            <AddCard />
+          </div>
           <ReactModal
-           isOpen={this.state.showModal}
-           contentLabel="onRequestClose Example"
-           onRequestClose={this.handleCloseModal}
-           className="Modal"
-           overlayClassName="Overlay"
-        >
-          {/* <p>Modal text!</p> */}
-        <Form />
-          <button onClick={this.handleCloseModal}>Close Modal</button>
-        </ReactModal>
+            isOpen={this.state.showModal}
+            contentLabel="onRequestClose Example"
+            onRequestClose={this.handleCloseModal}
+            className="Modal"
+            overlayClassName="Overlay">
+            <Form />
+          <button onClick={this.handleCloseModal}>Cancel</button>
+          </ReactModal>
         </ul>
       </section>
     )

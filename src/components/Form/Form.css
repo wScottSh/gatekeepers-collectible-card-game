@@ -1,7 +1,13 @@
+.innerModal {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
 .inputContainer {
-  background-color: blue;
-  /* top: 0%; */
-  bottom: 0vh;
-  width: 400px;
-  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
