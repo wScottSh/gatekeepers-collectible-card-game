@@ -1,0 +1,4 @@
+.deckWrapper {
+  display: flex;
+  flex-flow: row wrap;
+}

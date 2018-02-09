@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './GlobalDeck.css'
 import Card from '../Card/Card'
 import fire from '../../fire'
 
@@ -41,18 +42,18 @@ class GlobalDeck extends Component {
   render() {
     return (
       <section className='display-card'>
-        <div className="wrapper">
-          <ul>
+        <div>
+          <ul className="deckWrapper">
             {this.state.cards.map((card) => {
               return (
-                <div>
+                <section className="cardHolder">
                   <li key={card.id}>
                     <Card title={card.title} game={card.game} type={card.type} image={card.image} attkName={card.attkName} flavorText={card.flavorText} />
                   </li>
                   <li>
                     <button onClick={() => this.removeItem(card.id)}>Remove Item</button>
                   </li>
-                </div>
+                </section>
               )
             })}
           </ul>
