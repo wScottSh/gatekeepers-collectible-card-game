@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './GlobalDeck.css'
 import Card from '../Card/Card'
+import AddCard from '../AddCard/AddCard'
 import fire from '../../fire'
 
 class GlobalDeck extends Component {
@@ -42,22 +43,21 @@ class GlobalDeck extends Component {
   render() {
     return (
       <section className='display-card'>
-        <div>
-          <ul className="deckWrapper">
-            {this.state.cards.map((card) => {
-              return (
-                <section className="cardHolder">
-                  <li key={card.id}>
-                    <Card title={card.title} game={card.game} type={card.type} image={card.image} attkName={card.attkName} flavorText={card.flavorText} />
-                  </li>
-                  <li>
-                    <button onClick={() => this.removeItem(card.id)}>Remove Item</button>
-                  </li>
-                </section>
-              )
-            })}
-          </ul>
-        </div>
+        <ul className="deckWrapper">
+          {this.state.cards.map((card) => {
+            return (
+              <section className="cardHolder">
+                <li key={card.id}>
+                  <Card title={card.title} game={card.game} type={card.type} image={card.image} attkName={card.attkName} flavorText={card.flavorText} />
+                </li>
+                <li>
+                  <button onClick={() => this.removeItem(card.id)}>Remove Item</button>
+                </li>
+              </section>
+            )
+          })}
+          <AddCard />
+        </ul>
       </section>
     )
   }
