@@ -15,7 +15,7 @@ class GlobalDeck extends Component {
   componentDidMount() {
     const cardsRef = fire.database().ref('cards');
     cardsRef.on('value', (snapshot) => {
-      console.log(snapshot.val());
+      // console.log(snapshot.val());
       let cards = snapshot.val();
       let newState = [];
       for (let card in cards) {
