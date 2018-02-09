@@ -1,15 +1,21 @@
 import React, {Component} from 'react'
 import './GlobalDeck.css'
+import ReactModal from 'react-modal'
 import Card from '../Card/Card'
 import AddCard from '../AddCard/AddCard'
+import Form from '../Form/Form'
 import fire from '../../fire'
 
 class GlobalDeck extends Component {
   constructor() {
     super()
     this.state = {
-      cards: []
+      cards: [],
+      showModal: false
     }
+
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
   componentDidMount() {
@@ -35,6 +41,14 @@ class GlobalDeck extends Component {
     });
   }
 
+  handleOpenModal () {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal () {
+    this.setState({ showModal: false });
+  }
+
   removeItem(cardId) {
     const cardRef = fire.database().ref(`/cards/${cardId}`);
     cardRef.remove();
@@ -56,7 +70,18 @@ class GlobalDeck extends Component {
               </section>
             )
           })}
-          <AddCard />
+          <button onClick={this.handleOpenModal}>Open</button>
+          <ReactModal
+           isOpen={this.state.showModal}
+           contentLabel="onRequestClose Example"
+           onRequestClose={this.handleCloseModal}
+           className="Modal"
+           overlayClassName="Overlay"
+        >
+          {/* <p>Modal text!</p> */}
+        <Form />
+          <button onClick={this.handleCloseModal}>Close Modal</button>
+        </ReactModal>
         </ul>
       </section>
     )
