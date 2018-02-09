@@ -1,8 +1,10 @@
 .deckWrapper {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 li {
   list-style: none;
+  padding: 20px 10px;
 }
