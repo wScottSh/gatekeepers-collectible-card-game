@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <header className="headerBlock">
         <h1 className="headerTitle">{this.props.title}</h1>
-    </header>
+      </header>
     )
   }
 }

@@ -27,6 +27,7 @@ p {
   left: 5%;
   top: 10px;
   font-size: 2em;
+  z-index: 2;
 }
 
 .cardGame {
@@ -36,13 +37,34 @@ p {
   font-size: 1em;
   opacity: 0.8;
   font-style: italic;
+  z-index: 2;
 }
 
 .cardImage {
+  position: absolute;
   object-fit: cover;
   border-radius: 10px;
+  top: 0;
   width: 100%;
   height: 100%;
+  border: solid;
+  border-color: black;
+  border-width: 0;
+  transition: height 0.3s ease, width 0.3s ease, top 0.3s ease, border-radius 0.3s ease, border-width 0.3s ease, border-color 0.3s ease;
+  z-index: 1;
+}
+
+.cardContainer:hover .cardImage {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 10px;
+  height: 50%;
+  width: 90%;
+  top: 11%;
+  border: solid;
+  border-color: white;
+  border-width: 4px 4px 4px 0;
+  border-radius: 0 10px 10px 0;
 }
 
 .cardType {
@@ -51,24 +73,26 @@ p {
   bottom: 5%;
   opacity: 0.8;
   font-size: 0.8em;
+  z-index: 2;
 }
 
 .cardAttkName {
   position: absolute;
   text-transform: uppercase;
-  width: 5px;
-  word-wrap: break-word;
-  right: 6%;
-  top: 2%;
+  width: 100%;
+  transform-origin: left;
+  transform: rotate(90deg);
+  right: -95%;
+  top: 1%;
   font-size: 1.5em;
-  text-align: right;
   font-family: 'Josefin Sans', sans-serif;
+  z-index: 2;
 }
 
 .cardFlavorText {
-  visibility: hidden;
   position: absolute;
   left: 5%;
   width: 90%;
   top: 320px;
+  z-index: 0;
 }

@@ -2,8 +2,9 @@
   display: flex;
   position: fixed;
   width: 100%;
-  top: 80px;
+  top: 65px;
   bottom: 0vh;
   flex-direction: row;
   justify-content: space-between;
+  z-index: -1;
 }
